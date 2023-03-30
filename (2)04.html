@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0,width=device-width">
+    <title>NILTECH</title>
+    <link rel="icon" type="ICON" sizes="192x192" href="imagefile1/favicon/android-icon-192x192.ico">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/ie.js"></script>
+    <script defer src="js/main.js"></script>
+    <script src="main.js" defer></script>
+<style>
+  *      { margin: 0px;padding: 0px;box-sizing: border-box;}
+	
+  ul,ol  { list-style: none;margin:0 0 0 0;}
+  a      { text-decoration: none;}
+
+  /*---------------header------------------*/
+  header { width: 100%;height: 13.5vmin;}
+  header .navbar
+         { width: 100%;height: 13.5vmin;
+           display: flex;
+           justify-content: space-between;
+           align-items: center;
+           position: absolute;padding: 3vmin 0;}
+  header .util         /*--상단 네비게이션 위치---*/
+         { width: 25%;height: 10vmin;
+           display: block;position: absolute;
+           margin: 0vmin 0 0 60%;}
+  header .util li
+         { display: block;float: left;}
+  header .util li a    /*--상단 네비게이션 text---*/
+         { font: 1.2vmin "arial";
+           color: rgb(192, 193, 201);
+           display: block;
+           padding: 0 2vmin;margin: 0 0 0 0vmin;}             
+  header .navbar__logo
+         { width: 27vmin;height: 20vmin;background-color: #00378f;
+           background: url(imagefile1/logo.png)no-repeat;
+           background-size: 100%;
+           position:absolute;margin: -3vmin 0 0 5.9vmin;}             
+  header .navbar__menu 
+         { width: 120vmin;height: 5vmin;
+           list-style: none;
+           display: flex;position: absolute;
+           margin: 9vmin 0 0 45vmin;}
+  header .navbar__menu li 
+         { width: 41vmin;height: 5.1vmin;text-align: center;
+           padding: 1vmin 0 0 1vmin;}
+  header .navbar__menu li a
+         { width: 10vmin;height: 5vmin;
+           font: bold 1.7vmin/1 "arial";color: #0a0c0c;
+           text-decoration: none;}
+  header .navbar__menu li:hover 
+         { z-index : 1;
+           color: white;text-align: center;
+           border-radius: 3px;border-bottom: 0.5vmin solid #143cfb;}                   
+           
+  header .navbar__icons 
+         { color: white;list-style: none;align-items: center;
+           display: flex;}
+  header .navbar__icons li 
+         { width: 35vmin;height: 5.1vmin;
+           padding: 0;margin: 0;}
+  header .menubar 
+         { width: 9vmin;height: 7vmin;
+           background-image: url(imagefile1/menuBar.png);
+           background-size: 100%;
+           position: absolute;
+           margin: 1.9% 0 0 85%;display: none;} 
+  /*-----------MOBILE----------*/                    
+  @media screen and (min-width: 80px) and (max-width: 980px) 
+         { header .navbar
+         { width: 100%;height: 13.5vmin;
+           flex-direction: column;align-items: flex-start;margin: 0;}  
+           header .util         /*--상단 네비게이션 위치---*/
+         { width: 50%;height: 10vmin;
+           display: block;position: absolute;
+           margin: -1.5vmin 0 0 40vmin;}
+           header .util li
+         { display: block;float: left;}
+           header .util li a    /*--상단 네비게이션 text---*/
+         { font: 2vmin "arial";
+           color: rgb(192, 193, 201);
+           display: block;
+           padding: 0 2vmin;margin: 0 0 0 0vmin;} 
+           header .navbar__logo
+         { width: 43vmin;height: 20vmin;
+           background: url(imagefile1/logo.png)no-repeat;
+           background-size: 100%;
+           position:absolute;margin: 1.5% 0 0 0vmin;}  
+           header .navbar__menu 
+         { width: 35vmin;height: 60vmin;background-color: #1b2f58; 
+           z-index : 1;flex-direction: column;
+           align-items: center;
+           border-radius: 0 0 1.5vmin 1.5vmin;
+           display: none;margin: 14.5vmin 0 0 60vmin;}
+           header .navbar__menu li 
+         { width: 100%;height: 60vmin;
+           z-index : 1;text-align: center;
+           padding: 2.7vmin 0 0 0;margin: 0;}
+           header .navbar__menu li a
+         { font: normal 3vmin/1 "arial";color: #fff;} 
+           header .navbar__menu li:hover 
+         { z-index : 1;
+           background:radial-gradient(circle,#00378f,#071b74);/*-#162544-*/
+           color: white;text-align: center;
+           border-radius: 3px;border-bottom: none;}                                  
+           header .navbar__icons 
+         { width: 100%;
+           justify-content: center;display: none;}
+           header .menubar
+         { width: 9vmin;height: 7vmin;
+           background-image: url(imagefile1/menuBar.png);
+           background-size: 100%;
+           display: block;position: absolute;
+           margin: 1.9% 0 0 85%;}
+           header .navbar__menu.active,.navbar__icons.active 
+         { display: flex;}} 
+  /*-----------TABLET----------*/       
+  @media screen and (min-width: 600px) and (max-width: 1280px) 
+         { header .navbar
+         { width: 100%;height: 13.5vmin;
+           flex-direction: column;align-items: flex-start;margin: 0;}  
+           header .util         /*--상단 네비게이션 위치---*/
+         { width: 50%;height: 10vmin;
+           display: block;position: absolute;
+           margin: -1.5vmin 0 0 40vmin;}
+           header .util li
+         { display: block;float: left;}
+           header .util li a    /*--상단 네비게이션 text---*/
+         { font: 2vmin "arial";
+           color: rgb(192, 193, 201);
+           display: block;
+           padding: 0 2vmin;margin: 0 0 0 0vmin;} 
+           header .navbar__logo
+         { width: 37vmin;height: 20vmin;
+           background: url(imagefile1/logo.png)no-repeat;
+           background-size: 100%;
+           position:absolute;margin: 2vmin 0 0 1.5%;}  
+           header .navbar__menu 
+         { width: 32vmin;height: 55vmin;background-color: #1b2f58; 
+           z-index : 1;flex-direction: column;
+           align-items: center;
+           border-radius: 0 0 1.5vmin 1.5vmin;
+           display: none;margin: 14.5vmin 0 0 61.5vmin;}
+           header .navbar__menu li 
+         { width: 100%;height: 60vmin;
+           z-index : 1;text-align: center;
+           padding: 2.7vmin 0 0 0;margin: 0;}
+           header .navbar__menu li a
+         { font: normal 2.5vmin/1 "arial";color: #fff;} 
+           header .navbar__menu li:hover 
+         { z-index : 1;
+           background:radial-gradient(circle,#00378f,#071b74);/*-#162544-*/
+           color: white;text-align: center;
+           border-radius: 3px;border-bottom: none;}                                  
+           header .navbar__icons 
+         { width: 100%;
+           justify-content: center;display: none;}
+           header .menubar
+         { width: 8.7vmin;height: 6.7vmin;
+           background-image: url(imagefile1/menuBar.png);
+           background-size: 100%;
+           display: block;
+           margin: 1.5% 0 0 87%;}
+           header .navbar__menu.active,.navbar__icons.active 
+         { display: flex;}}
+  @media screen and (min-height: 0px) and (max-height: 768px)
+         { header .navbar
+         { width: 100%;height: 13.5vmin;
+           flex-direction: column;align-items: flex-start;margin: 0;}  
+           header .util         /*--상단 네비게이션 위치---*/
+         { width: 50%;height: 10vmin;
+           display: block;position: absolute;
+           margin: -1.5vmin 0 0 40vmin;}
+           header .util li
+         { display: block;float: left;}
+           header .util li a    /*--상단 네비게이션 text---*/
+         { font: 2vmin "arial";
+           color: rgb(192, 193, 201);
+           display: block;
+           padding: 0 2vmin;margin: 0 0 0 0vmin;} 
+           header .navbar__logo
+         { width: 43vmin;height: 20vmin;
+           background: url(imagefile1/logo.png)no-repeat;
+           background-size: 100%;
+           position:absolute;margin: -0.3% 0 0 -47%;}  
+           header .navbar__menu 
+         { width: 35vmin;height: 60vmin;background-color: #1b2f58; 
+           z-index : 1;flex-direction: column;
+           align-items: center;
+           border-radius: 0 0 1.5vmin 1.5vmin;
+           display: none;margin: 5.5% 0 0 70%;}
+           header .navbar__menu li 
+         { width: 100%;height: 60vmin;
+           z-index : 1;text-align: center;
+           padding: 2.7vmin 0 0 0;margin: 0;}
+           header .navbar__menu li a
+         { font: normal 3vmin/1 "arial";color: #fff;} 
+           header .navbar__menu li:hover 
+         { z-index : 1;
+           background:radial-gradient(circle,#00378f,#071b74);/*-#162544-*/
+           color: white;text-align: center;
+           border-radius: 3px;border-bottom: none;}                                  
+           header .navbar__icons 
+         { width: 100%;
+           justify-content: center;display: none;}
+           header .menubar
+         { width: 9vmin;height: 7vmin;
+           background-image: url(imagefile1/menuBar.png);
+           background-size: 100%;
+           display: block;position: absolute;
+           margin: -0.2% 0 0 85%;}
+           header .navbar__menu.active,.navbar__icons.active 
+         { display: flex;}}
+         
+        /*--------------------메인화면----------------------*/
+
+  body   { width: 100%;height: 100%;}
+  main   { width: 100%;height: 100%;background-color: #FFF; 
+	         position: absolute;}
+  main .main
+         { width: 100%;height: 40vmin;
+	         background:#000;
+	         overflow: hidden;
+	         position: absolute;margin: 0;}         
+  .main .background-color
+         { width: 100%;height: 80vmin;
+           background: linear-gradient(120deg, #1b2f58b6,#16dcffbd,#1b2f58,rgb(16, 20, 34), rgb(16, 20, 34));
+           background-size: 400% 400%;      
+           object-fit: cover;
+           opacity: 100%;
+           position: absolute;margin: 0px 0 0 0px;
+           animation: gradient 10s ease infinite;}
+           @keyframes gradient {
+           0%   { background-position: 0% 50%;}
+           50%  { background-position: 100% 50%;}
+           100% { background-position: 0% 50%;}}
+  .main .background-color .grid             
+         { width: 150%;height: 150%;
+           background: url(imagefile1/grid2.png);
+           background-size: 100%;
+           position: absolute;margin: -35vmin 0 0 -50vmin;
+           transform: perspective(50vmin)rotateX(0deg);
+           transform-origin: center;
+           animation: grid 40s linear infinite;}
+           @keyframes grid 
+         { 0%  { opacity: 5%;transform: perspective(500px)rotateX(70deg)rotate( 360deg);}
+           5%  { opacity: 70%;}
+           45% { opacity: 100%;}
+           50% { opacity: 100%;}
+           60% { opacity: 70%;}
+           100%{ opacity: 0%;transform: perspective(500px)rotateX(70deg)rotate( 0deg);}}
+
+  /*------------------이미지회전 배경-----------------------------*/              
+  figure .main  
+         { width: 100%;height: 100%;
+           overflow: hidden;
+           position: absolute;}
+  .main .rotate1 
+         { width: 100%;             
+           position: absolute;
+           perspective: 150vmax;}
+  .main .rotate1 #rotate2 
+         { width: 40vmax;height: 40vmax;
+           position: absolute; 
+           top: -5vmin;left: 60vmin;
+           transform-style: preserve-3d;
+           animation: ani1 linear 40s infinite;}
+           @keyframes ani1 
+         { 0%  {transform: perspective(100vmax)rotateY(0deg);}
+           100%{transform: perspective(100vmax)rotateY(360deg);}}
+  .main .rotate1 #rotate2 article .inner1 
+         { width: 100%;height: 100%;background: rgba(42, 33, 161, 0.527);
+           opacity: 0.7;overflow: hidden;
+           box-sizing: border-box; 
+           border-radius: 5vmin 5vmin 0 0; 
+           position: absolute;     
+           padding: 0px;
+           transition: all 0.5s;}
+                      /* common ui */
+  .main .rotate1 #rotate2 article 
+         { width: 100%;height: 50%;
+           position: absolute;top: 0;left: 0;
+           backface-visibility: hidden;}
+
+                      /* 3D 배치 */
+  .image1
+         { transform: rotateY(0deg)   translateZ(-55vmax);}
+  .image2
+         { transform: rotateY(45deg)  translateZ(-55vmax);}
+  .image3
+         { transform: rotateY(90deg)  translateZ(-55vmax);}
+  .image4
+         { transform: rotateY(135deg) translateZ(-55vmax);}
+  .image5
+         { transform: rotateY(180deg) translateZ(-55vmax);}
+  .image6
+         { transform: rotateY(225deg) translateZ(-55vmax);}
+  .image7
+         { transform: rotateY(270deg) translateZ(-55vmax);}
+  .image8
+         { transform: rotateY(315deg) translateZ(-55vmax);} 
+
+  .main .logoimage
+         { width: 30vmin;height:3.93vmin;
+           background-image: url("imagefile1/logo-white2\(GIF\).gif");
+           background-size: 100%;
+           opacity: 20%;
+           position: center;margin: 23vmin auto 0;
+           animation: logo linear 15s infinite;
+           animation-delay: 0s;}
+           @keyframes logo 
+         { 0%  {scale: 100%;}
+           15% {scale: 150%;}
+           20% {scale: 150%;opacity: 35%;}
+           35% {scale: 150%;opacity: 0%;}
+           100%{scale: 150%;opacity: 0%;}}
+
+  /*------------------DOT 장식-----------------------------*/  
+  figure 
+         { width: 100%;height: 100%;}
+  figure .dot-rotate1 
+         { position: fixed;
+           width: 150vmin;height: 50vmin; 
+           perspective: 150vmin;
+           position: absolute;margin: -10vmin 0 0 -50vmin;}
+
+    figure .dot-rotate1 #dot-rotate2 
+           { width: 350vmin;height: 100vmin; 
+             position: absolute;
+             margin-top: 0vmin;margin-left: 0vmin; 
+             transform-style: preserve-3d;
+             animation: ani linear 10s infinite;}
+             @keyframes ani {
+             0% {transform: rotateY(360deg);}
+             100% {transform: rotateY(0deg);}}
+    
+                             /* common ui */
+    figure .dot-rotate1 #dot-rotate2 article 
+           { position: absolute;top: 0px;left: 0px; 
+             backface-visibility: hidden;}
+                               /*face1*/
+    figure .dot-rotate1 #dot-rotate2 .dot1 .inner2 .dot1-1 
+           { opacity:50%;
+             width: 5px;height: 5px;background-color: #fff;
+             border-radius: 50px;box-shadow: #fff 0px 0px 30px 5px;
+             float: left;margin: 450px 0 0 500px;}
+    figure .dot-rotate1 #dot-rotate2 .dot1 .inner2 .dot1-2
+           { width: 5px;height: 5px;background-color:#fff;
+             border-radius: 50px;box-shadow: #fff 0px 0px 30px 5px;
+             float: left;margin: 400px 0 0 -200px;}
+    figure .dot-rotate1 #dot-rotate2 .dot1 .inner2 .dot1-3
+           { width: 5px;height: 5px;background-color: #fff;
+             border-radius: 50px;box-shadow: #fff 0px 0px 30px 5px;
+             float: left;margin: 200px 0 0 -500px;}
+    figure .dot-rotate1 #dot-rotate2 .dot1 .inner2 .dot1-4
+           { opacity:50%;width: 10px;height: 10px;background-color: #fff;
+             border-radius: 50px;box-shadow: #fff 0px 0px 30px 5px;
+             float: left;margin: 500px 0 0 -400px;}
+    figure .dot-rotate1 #dot-rotate2 .dot1 .inner2 .dot1-5
+           { width: 10px;height: 10px;background-color: #fff;
+             border-radius: 50px;box-shadow: #fff 0px 0px 30px 5px;
+             float: left;margin: 550px 0 0 -700px;}
+    figure .dot-rotate1 #dot-rotate2 .dot1 .inner2 .dot1-6
+           { width: 5px;height: 5px;background-color: #fff;
+             border-radius: 50px;box-shadow: #fff 0px 0px 30px 5px;
+             float: left;margin: 250px 0 0 -300px;}
+    figure .dot-rotate1 #dot-rotate2 .dot1 .inner2 .dot1-7
+           { width: 10px;height: 10px;background-color: #fff;
+             border-radius: 50px;box-shadow: #fff 0px 0px 30px 5px;
+             float: left;margin: 300px 0 0 -480px;}
+    figure .dot-rotate1 #dot-rotate2 .dot1 .inner2 .dot1-8
+           { width: 10px;height: 10px;background-color: #fff;
+             border-radius: 50px;box-shadow: #fff 0px 0px 30px 5px;
+             float: left;margin: 450px 0 0 200px;}
+    figure .dot-rotate1 #dot-rotate2 .dot1 .inner2 .dot1-9
+           { opacity:50%;width: 5px;height: 5px;background-color: #fff;
+             border-radius: 50px;box-shadow: #fff 0px 0px 30px 5px;
+             float: left;margin: 300px 0 0 250px;}
+
+                           /*face2*/
+    figure .dot-rotate1 #dot-rotate2 .dot2 .inner2  
+           { margin: 0 0 0 0;}
+    figure .dot-rotate1 #dot-rotate2 .dot2 .inner2 .dot2-1 
+           { opacity:50%;
+             width: 5px;height: 5px;background-color: #fff;
+             border-radius: 50px;box-shadow: #fff 0px 0px 30px 5px;
+             float: left;margin: 150px 0 0 450px;}
+    figure .dot-rotate1 #dot-rotate2 .dot2 .inner2 .dot2-2
+           { opacity:50%;
+             width: 3px;height: 3px;background-color: #fff;
+             border-radius: 50px;box-shadow: #fff 0px 0px 30px 5px;
+             float: left;margin: 100px 0 0 200px;}
+    figure .dot-rotate1 #dot-rotate2 .dot2 .inner2 .dot2-3
+           { width: 3px;height: 3px;background-color: #fff;
+             border-radius: 50px;box-shadow: #fff 0px 0px 30px 5px;
+             float: left;margin: 250px 0 0 150px;}
+    figure .dot-rotate1 #dot-rotate2 .dot2 .inner2 .dot2-4
+           { width: 10px;height: 10px;background-color: #fff;
+             border-radius: 50px;box-shadow: #fff 0px 0px 30px 5px;
+             float: left;margin: 350px 0 0 350px;}
+    figure .dot-rotate1 #dot-rotate2 .dot2 .inner2 .dot2-5
+           { opacity:50%;
+             width: 10px;height: 10px;background-color: #fff;
+             border-radius: 50px;box-shadow: #fff 0px 0px 30px 5px;
+             float: left;margin: 180px 0 0 100px;}
+    figure .dot-rotate1 #dot-rotate2 .dot2 .inner2 .dot2-6
+           { width: 15px;height: 15px;background-color: #fff;
+             border-radius: 50px;box-shadow: #fff 0px 0px 30px 5px;
+             float: left;margin: 200px 0 0 -380px;}
+    figure .dot-rotate1 #dot-rotate2 .dot2 .inner2 .dot2-7
+           { opacity:80%;width: 15px;height: 15px;background-color: #fff;
+             border-radius: 50px;box-shadow: #fff 0px 0px 30px 5px;
+             float: left;margin: 300px 0 0 -580px;}
+    figure .dot-rotate1 #dot-rotate2 .dot2 .inner2 .dot2-8
+           { opacity:70%;width: 10px;height: 10px;background-color: #fff;
+             border-radius: 50px;box-shadow: #fff 0px 0px 30px 5px;
+             float: left;margin: 230px 0 0 200px;}
+    figure .dot-rotate1 #dot-rotate2 .dot2 .inner2 .dot2-9
+           { opacity:80%;width: 10px;height: 10px;background-color: #fff;
+             border-radius: 50px;box-shadow: #fff 0px 0px 30px 5px;
+             float: left;margin: 250px 0 0 200px;}
+    figure .dot-rotate1 #dot-rotate2 .dot2 .inner2 .dot2-10
+           { opacity:50%;width: 5px;height: 5px;background-color: #fff;
+             border-radius: 50px;box-shadow: #fff 0px 0px 30px 5px;
+             float: left;margin: 230px 0 0 300px;}
+ 
+                                 /*face3*/
+    figure .dot-rotate1 #dot-rotate2 .dot3 .inner2
+           { margin: 0 0 0 0;}
+    figure .dot-rotate1 #dot-rotate2 .dot3 .inner2 .dot3-1 
+           { opacity:50%;
+             width: 3px;height: 3px;background-color: #fff;
+             border-radius: 50px;box-shadow: #fff 0px 0px 30px 5px;
+             float: left;margin: 420px 0 0 -300px;}
+    figure .dot-rotate1 #dot-rotate2 .dot3 .inner2 .dot3-2
+           { opacity:50%;
+             width: 3px;height: 3px;background-color: #fff;
+             border-radius: 50px;box-shadow: #fff 0px 0px 30px 5px;
+             float: left;margin: 300px 0 0 -100px;}
+    figure .dot-rotate1 #dot-rotate2 .dot3 .inner2 .dot3-3
+           { opacity:80%;
+             width: 3px;height: 3px;background-color: #fff;
+             border-radius: 50px;box-shadow: #fff 0px 0px 30px 5px;
+             float: left;margin: 400px 0 0 -150px;}
+    figure .dot-rotate1 #dot-rotate2 .dot3 .inner2 .dot3-4
+           { opacity:50%;
+             width: 10px;height: 10px;background-color: #fff;
+             border-radius: 50px;box-shadow: #fff 0px 0px 30px 5px;
+             float: left;margin: 500px 0 0 50px;}
+    figure .dot-rotate1 #dot-rotate2 .dot3 .inner2 .dot3-5
+           { opacity:50%;
+             width: 10px;height: 10px;background-color: #fff;
+             border-radius: 50px;box-shadow: #fff 0px 0px 30px 5px;
+             float: left;margin: 300px 0 0 0;}
+    figure .dot-rotate1 #dot-rotate2 .dot3 .inner2 .dot3-6
+           { width: 10px;height: 10px;background-color: #fff;
+             border-radius: 50px;box-shadow: #fff 0px 0px 30px 5px;
+             float: left;margin: 400px 0 0 200px;}
+    figure .dot-rotate1 #dot-rotate2 .dot3 .inner2 .dot3-7
+           { opacity:70%;width: 15px;height: 15px;background-color: #fff;
+             border-radius: 50px;box-shadow: #fff 0px 0px 30px 5px;
+             float: left;margin: 200px 0 0 0;}
+    figure .dot-rotate1 #dot-rotate2 .dot3 .inner2 .dot3-8
+           { opacity:50%;width: 15px;height: 15px;background-color: #fff;
+             border-radius: 50px;box-shadow: #fff 0px 0px 30px 5px;
+             float: left;margin: 450px 0 0 100px;}
+
+                          /* 3D 배치 */
+    .dot1  { transform: rotateY(0deg) translateZ(-900px);}
+    .dot2  { transform: rotateY(20deg) translateZ(-900px);}
+    .dot3  { transform: rotateY(40deg) translateZ(-900px);}
+
+    /*----------------------보유기술소개(내용)-------------------------*/ 
+    section 
+           { width: 95%;height: 200vmin;
+             position: absolute;margin: 0;}             
+    section .section1 
+           { width: 95%;height: 200vmin;
+             position: absolute;
+             padding: 0 5vmin 0;margin: 57vmin auto 0;}
+    .section1 h1       /*---text 회사소개(스타일)--*/
+           { width: 105%;height: 5vmin;
+             font: bold 3.7vmin/1 "arial";color: rgb(255, 255, 255);
+             text-align: center;	           
+             position: absolute;margin: -39vmin auto 0;}
+    .section1 .inner1
+           { width: 100%;height: 55vmin;
+             margin: 0 auto 0;}
+                     /*-----------목록-----------*/  
+    .section1 .title1
+           { width: 50%;height: 45vmin;
+             position: center;margin: -5vmin auto 0;}            
+    .section1 .title1-1
+           { width: 73%;height: 11vmin;
+             font: normal 3vmin "arial";color: #1474e3;
+             text-align: center;letter-spacing: 0px;
+             display: flex;
+             margin: 0 0 0 37%;}  
+    .section1 .title1-2
+           { width: 50vmin;height: 0vmin;
+             font: normal 2.7vmin "arial";color: rgb(0, 0, 0);
+             text-align: center;letter-spacing: 0px;
+             display: flex;
+             margin: 0 0 0 4.5%;}                       
+                     /*---------하단제목---------*/
+    .section1 .title2
+           { width: 112%;height: 35vmin;
+             border-top: #424242 dashed 0.4vmin;
+             position: center;margin: 15vmin auto 0;} 
+    .section1 .title2-1
+           { width: 100%;height: 13vmin;
+             font: normal 2.7vmin "arial";color: #1474e3;
+             text-align: center;letter-spacing: 0px;
+             position: center;margin: 15vmin auto 0;}
+    .section1 .title2-2
+           { width: 100%;height: 10vmin;
+             font: normal 3vmin "arial";color: rgb(0, 0, 0);
+             text-align: center;letter-spacing: 0px;
+             position: center;margin:  -3vmin auto 0;}               
+
+                     /*-----------내용-----------*/   
+    .section1 .inner1
+           { width: 40vmin;height: 90vmin;
+             text-align: center;
+             position: absolute;
+             padding: 0 5vmin;margin: 35vmin 0 0 -5vmax;}
+    .section1 .inner2
+           { width: 40vmin;height: 90vmin;
+             position: absolute;
+             padding: 0 5vmin;margin: 35vmin 0 0 23.5vmax;}              
+    .section1 .inner3
+           { width: 40vmin;height: 90vmin;
+             text-align: center;
+             position: absolute;
+             padding: 0 5vmin;margin: 35vmin 0 0 50.5vmax;} 
+    .section1 .inner4
+           { width: 40vmin;height: 90vmin;
+             text-align: center;
+             position: absolute;
+             padding: 0 5vmin;margin:  149vmin 0 0 -5vmax;}
+
+    .section1 .txt             /*-----제목,내용(범위)------*/ 
+           { width: 85vmin;height: 90vmin;
+             padding: 0 5vmin;margin: 0 0 0 -2vmin;}                  
+    
+    .section1 .txt h2          /*-------제목(스타일)-------*/ 
+           { width: 50vmin;height: 17vmin;
+             font: bold 2.5vmin "franklin gothic book";color: rgb(0, 0, 0);
+             text-align: center;letter-spacing: 1px;
+             padding: 15vmin 0 0 0;margin: 5vmin auto -10vmin;
+             transition: 1s;}                                                                                                                                       
+    .section1 article .txt p   /*---------내용 text--------*/ 
+           { width: 40vmin;height: 20vmin;
+             font: normal 2vmin/1.6 "arial";color: rgb(0, 0, 0);
+             text-align: justify;letter-spacing: -0.1vmin;
+             position: center;margin: 23vmin auto 0;}
+    .section1 article .txt .p             
+           { font: normal 2.1vmin 'arial';color: #1474e3;
+             letter-spacing: -0.1vmin;margin: -5vmin 0 0 17.5vmin;}          
+    .section1 article figure   /*-------이미지프레임-------*/ 
+           { width: 35vmin;height: 35vmin;overflow: hidden;
+             border-radius: 3.5vmin;box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
+             position: absolute;margin: -119vmin 0 0 24.5vmin;
+             transition: 1s;} 
+    .section1 article:hover .txt h2::after 
+           { width: 80vmin;}         
+
+    /*---------------------------Footer--------------------------------*/
+    footer 
+           { width: 100%;background: rgb(16, 20, 34);
+	           padding: 7vmin 0px;margin: 390vmin 0 0 0;}
+    footer .inner 
+           { width: 123vmin;padding-bottom: 10vmin;margin: 0px auto;}
+    footer .inner .upper        /*--언더라인--*/
+           { width: 100%;
+	           border-bottom: 0.2vmin solid #777;
+	           padding-bottom: 1.3vmin;}
+    footer .inner .logo-footer  /*----로고----*/
+           { width: 30vmin;display: inline-flex;
+             padding-left: 2vmin;margin: -3vmin 0 0 -2.1vmin;}             
+	  /*상단 영역 float해제*/    
+    footer .inner .upper::after 
+           { content: "";
+	           display: block;
+	           clear: both;}
+    footer .inner .upper ul 
+           { float: right;}
+    footer .inner .upper ul li /*--policy terms ...--*/
+           { float: left;
+             margin-left: 1.5vmin;}
+    footer .inner .upper ul li a/*--policy terms ...--*/ 
+           { font: bold 1.3vmin "arial";color: rgb(205, 207, 214);}
+    footer .inner .lower        /*----회사정보내용---*/ 
+           { width: 100%;padding-top: 1.3vmin;}
+    footer .inner .lower address 
+           { width: 100%;
+             font: 1.3vmin/2.3 "arial";color: rgb(205, 207, 214);
+	           margin-bottom: 2vmin;}                                                  
+    footer .inner .lower p 
+           { width: 100%;
+	           font: 1.3vmin/2.3 "arial";color: rgb(205, 207, 214);
+             letter-spacing: 0.10vmin;margin-top: -2vmin;}
+</style>
+</head>
+
+<body>
+  <link href="(m)04.css" rel="stylesheet" media="screen and (min-width: 280px)and (max-width: 980px)"> 
+  <link href="(t)04.css" rel="stylesheet" media="screen and (min-width: 600px)and (max-width: 1280px)">
+  <link href="(l)04.css" rel="stylesheet" media="screen and (min-height:   0px)and (max-height: 768px)"> 
+  <header>
+    <nav class="navbar">
+      <ul class="util">
+      <li><a href="#">Contact</a></li>  
+      <li><a href="#">   Help</a></li>  
+      <li><a href="#">  Login</a></li>  
+      <li><a href="#">   Join</a></li>  
+      <li><a href="#">Sitemap</a></li>        
+      </ul> 
+        
+      <a href="(2)main.html">
+      <div class="navbar__logo"></div>
+      </a>   
+        
+      <ul class="navbar__menu">
+      <li><a href="(2)main.html">HOME</a></li>
+      <li><a href="(2)회사소개.html">회사소개</a></li>
+      <li><a href="(2)사업분야.html">사업분야</a></li>
+      <li><a href="(2)보유기술소개.html">보유기술소개</a></li>
+      <li><a href="(2)주요실적.html">주요실적</a></li>
+      <li><a href="(2)외주개발실적.html">외주개발실적</a></li>
+      </ul>
+      <a href="#" class="menubar"></a>    
+    </nav>   
+  </header>  
+
+  <!-------------------배경----------------------->
+  <main>
+      <div class="main">  
+      <div class="background-color">    <!---배경색상--->
+      <div class="grid"></div>          <!---배경Grid--->       
+    </div>
+
+    <div class="rotate1">
+      <div id="rotate2">
+    
+      <article class="image1">  <!--1-->
+      <div class="inner1">
+      <div><img src="imagefile1/Machine Vision Solution (Classical Algorithm 기반,배경이미지).png"width="100%"></div>
+      </div>
+      </article>
+    
+      <article class="image2">
+      <div class="inner1">  <!--8-->
+      <div><img src="imagefile1/배경이미지3-1.gif"width="100%"></div>    
+      </div>
+      </article>
+    
+      <article class="image3">  <!--7-->
+      <div class="inner1">
+      <div><img src="imagefile1/NILTECH(favicon).png"width="100%"></div> 
+      </div>
+      </article>
+    
+      <article class="image4">  <!--6-->
+      <div class="inner1">
+      <div><img src="imagefile1/EESsolution(s-size).gif"width="100%"></div>   
+      </div>
+      </article>
+    
+      <article class="image5">  <!--5-->
+      <div class="inner1">
+      <div><img src="imagefile1/outsourced Solution(배경이미지).png"width="100%"></div>    
+      </div>
+      </article>
+    
+      <article class="image6">  <!--4-->
+      <div class="inner1">
+      <div><img src="imagefile1/ACS(AGV Control System 배경이미지2).png"width="100%"></div> 
+      </div>
+      </article>
+    
+      <article class="image7">	 <!--3-->
+      <div class="inner1">
+      <div><img src="imagefile1/CIM MES Solution(배경이미지).png"width="100%"></div> 
+      </div>
+      </article>
+    
+      <article class="image8"> <!--2-->
+      <div class="inner1">
+      <div><img src="imagefile1/Machine Vision Solution (AI 기반,배경이미지).png"width="100%"></div>   
+      </div>
+      </article>
+      </div>
+
+      <div class="logoimage"></div>
+
+    </div>	
+   
+    <!--------------------빛 장식---------------------> 
+  <figure>    
+      <div class="dot-rotate1">
+      <div id="dot-rotate2">
+
+      <article class="dot1">
+      <div class="inner2">
+      <div class="dot1-1"></div>
+      <div class="dot1-2"></div>
+      <div class="dot1-3"></div>
+      <div class="dot1-4"></div>
+      <div class="dot1-5"></div>
+      <div class="dot1-6"></div>
+      <div class="dot1-7"></div>
+      <div class="dot1-8"></div>
+      <div class="dot1-9"></div>
+      <div class="dot1-10"></div>
+      </div>
+    </article>
+    
+    <article class="dot2">
+    <div class="inner2">
+      <div class="dot2-1"></div>
+      <div class="dot2-2"></div>
+      <div class="dot2-3"></div>
+      <div class="dot2-4"></div>
+      <div class="dot2-5"></div>
+      <div class="dot2-6"></div>
+      <div class="dot2-7"></div>
+      <div class="dot2-8"></div>
+      <div class="dot2-9"></div>
+      <div class="dot2-10"></div>
+      </div>
+    </article>
+    
+    <article class="dot3">
+      <div class="inner2">
+      <div class="dot3-1"></div>
+      <div class="dot3-2"></div>
+      <div class="dot3-3"></div>
+      <div class="dot3-4"></div>
+      <div class="dot3-5"></div>
+      <div class="dot3-6"></div>
+      <div class="dot3-7"></div>
+      <div class="dot3-8"></div>
+      <div class="dot3-9"></div>
+      <div class="dot3-10"></div>
+      </div>
+    </article> 
+
+    </div>
+    </div>  
+    </div> 
+  <figure> 
+
+  <!-------------------보유기술소개----------------------->
+  <section>  
+    <div class="section1"> <!--상단제목-->
+    <h1>보유기술소개</h1>
+
+    <div class="title1">   <!--목록-->
+      <a href="(2)보유기술소개.html">
+      <div class="title1-1">01
+      <div class="title1-2"style="margin: 0 0 0 2.7vmin;">
+         Machine Vision Solution<br> 
+         ( Classical Algorithm 기반 )
+      </div></div></a>
+      <a href="(2)02.html">        
+      <div class="title1-1">02
+      <div class="title1-2">      
+         Machine Vision Solution<br> 
+         ( AI 기반 )
+      </div></div></a>
+      <a href="(2)03.html">
+      <div class="title1-1">03
+      <div class="title1-2">
+         CIM/MES Solution
+      </div></div></a>
+      <a href="(2)04.html">
+      <div class="title1-1"><b>04</b>
+      <div class="title1-2">
+      <b>ACS ( AGV Control System )</b>
+      </div></div></a>
+      <a href="(2)05.html">
+      <div class="title1-1">05
+      <div class="title1-2">
+         SW 외주 개발
+      </div></div></a>  
+    </div>
+    
+    <div class="title2">   <!--하단제목-->
+      <div class="title2-1">NILTECH  보유 기술 소개</div>
+      <div class="title2-2"><b>ACS ( AGV Control System )</b></div>
+    </div>    
+          <!-----------내용----------->
+     <article>
+     <div class="inner1">
+     <div class="txt">
+     <h2>일반적인 AGV의 Control, Path Find,<br> 
+         Job 배분 기능 이외에<br>
+         다음과 같은 AI 기능을 지원 합니다.</h2>
+     <p> • AGV Usage Management<br>
+         • Auto Path Balancing<br>           
+           (Path 이용 자동 분석)<br>
+         • Machine Vision 기능 제공</p>
+     </div> 
+     <figure>
+     <img src="imagefile1/보유기술소개/4. ACS(AGV Control System)/ACS(AGV Control System)s size.png"
+          alt="Classical Algorithm1"class="ClassicalAlgorithm1"width="100%"></img>
+     </figure>
+     </div>
+     </article>
+ 
+     <article>
+     <div class="inner2">
+     <div class="txt">
+     <h2>▶ 설명<br></h2>
+     <p>• AGV Usage Management<br>
+        AGV의 사용 빈도 및 이동 경로를 분석<br>
+        <br>
+        • Auto Path Balancing<br> 
+        (Path 이용 자동 분석)<br>
+        <br>
+        ‘Priority 고려 Dijkstra algorithm’을 기본으로 
+        사용하지만 해당 Map 상에서 Abnormal 상황이 
+        자주 발생하는 상황을 자동 반영하도록 경로 
+        학습 (Priority 자동 조정)<br>
+        <br>
+        • Machine Vision 기능 제공<br>
+        Pick/Place 동작 중 Vision Align 기능 Path 
+        학습에 의한 Scene 분석 위치 추정 Vision 기능            
+    </p>
+    </div>
+    <figure> 
+    <img src="imagefile1/보유기술소개/4. ACS(AGV Control System)/ACS(AGV Control System)s size2.png"
+         alt="Classical Algorithm2"class="ClassicalAlgorithm2"width="100%"></img>
+    </figure>
+    </div>
+    </article>
+     
+    <article>
+    <div class="inner3">
+    <div class="txt">
+    <h2>▶ 적용 실적</h2>
+    <p>OHT 연계 자동 물류 System<br>
+       → OHT 반송시스템과 연계하여 통합 Control</p>
+    <p class="p">  
+       적용 업체: KAIST Test Line</p>
+    </p>
+    </div>
+    <figure> 
+    <img src="imagefile1/보유기술소개/4. ACS(AGV Control System)/ACS(AGV Control System)s size3.png"
+         alt="Classical Algorithm3"class="ClassicalAlgorithm3"width="100%"></img>
+    </figure>
+    </div> 
+    </article>        
+ 
+    <article>
+    <div class="inner4">
+    <div class="txt">
+    <h2>▶ 적용 실적</h2>
+    <p>다층 연동 자동 물류 System<br>
+       → 층간 이동이 있는 물류 반송 AGV Control</p>
+    <p class="p">  
+       적용 업체: 대덕전자 FPCB Line</p>
+    </p>
+    </div> 
+    <figure>
+    <img src="imagefile1/보유기술소개/4. ACS(AGV Control System)/ACS(AGV Control System)s size4.png"
+         alt="Classical Algorithm4"class="ClassicalAlgorithm4"width="100%"></img>
+    </figure>
+    </div>
+    </article>
+ 
+    </div>
+    </div>    
+</section>
+
+</main>
+
+  <!------------------------------footer-------------------------------------->
+  <footer>
+      <div class="inner">
+      <div class="upper">
+      <img src="imagefile1/logo(흰색-s size).png"width="100%"class="logo-footer">
+      <ul>
+      <li><a href="">Policy</a></li>
+      <li><a href="">Terms</a></li>
+      <li><a href="">Family Site</a></li>
+      <li><a href="">Sitemap</a></li>
+      </ul>
+      </div>
+      
+      <div class="lower">
+      <address>
+         회사명:&nbsp;&nbsp;&nbsp;(주)닐테크바이팅&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         대표 :&nbsp;&nbsp;&nbsp;0 0 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         사업자등록번호:&nbsp;&nbsp;&nbsp;000-00-00000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br> 
+         Email :&nbsp;&nbsp;&nbsp;haniro@naver.com&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         TEL :&nbsp;&nbsp;&nbsp;031-554-2001&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         FAX :&nbsp;&nbsp;&nbsp;02-554-2001&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         ADRESS :&nbsp;&nbsp;&nbsp;경기도 화성시 동탄 문화센터로 아시아프라자 7F<br>
+                        
+         </address>
+         <p>niltech &copy; copyright all right reserved.</p>
+         </div>
+         </div>
+  </footer>
+      
+  </div>
+  </body>
+  </html>

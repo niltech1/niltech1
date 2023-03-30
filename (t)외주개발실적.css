@@ -1,0 +1,318 @@
+ul,ol  { list-style: none;margin:0 0 0 0;}
+a      { text-decoration: none;}
+
+/*---------------header------------------*/
+header { width: 100%;height: 17.5vmin;}
+header .inner
+       { width: 100%;height: 17.5vmin;background-color: rgb(255, 255, 255);
+         margin: 0;
+         position: relative;padding: 5vmin 0 0 0;margin:0;} /*자식 absolute 요소의 기준점 설정*/    
+
+
+/*------------------------메인화면-----------------------------*/
+
+body   { width: 100%;height: 100vmin;}
+.main
+       { width: 100%;height: 146vmin;
+         background:#000;position: absolute;
+         overflow: hidden;
+         position: absolute;margin: 0;}         
+.main .background-color
+       { width: 100%;height: 146vmin;
+         background: linear-gradient(120deg, #1b2f58b6,#16dcffbd,#1b2f58,rgb(16, 20, 34), rgb(16, 20, 34));
+         background-size: 400% 400%;      
+         object-fit: cover;
+         opacity: 100%;
+         position: absolute;margin: 0px 0 0 0px;
+         animation: gradient 12s ease infinite;}
+         @keyframes gradient {
+         50%  { background-position: 100% 50%;}
+         100% { background-position: 0% 50%;}}
+.main .background-color .grid             
+       { width: 450%;height: 200%;
+         background: url(imagefile1/grid2.png);
+         background-size: 100%;
+         position: absolute;margin: -65vmin 0 0 -150vmin;
+         transform: perspective(150vmin)rotateX(0deg);
+         transform-origin: center;
+         animation: grid 40s linear infinite;}
+         @keyframes grid 
+       { 0%  { opacity: 5%;transform: perspective(150vmin)rotateX(70deg)rotate( 360deg);}
+         5%  { opacity: 70%;}
+         30%  { opacity: 0%;}
+         45% { opacity: 100%;}
+         50% { opacity: 0%;}
+         80% { opacity: 0%;}
+         100%{ opacity: 100%;transform: perspective(150vmin)rotateX(70deg)rotate( 0deg);}}
+.main .logoimage
+       { display: none;}
+.main .NILTECH
+       { display: none;}
+.main .smartfactory
+       { display: none;}
+
+/*---------------------------DOT 장식-----------------------------*/  
+figure .dot-rotate1 
+       { position: fixed;
+         width: 50vmin;height: 50vmin; 
+         perspective: 1500px;}
+
+figure .dot-rotate1 #dot-rotate2 
+       { width: 200vmin;height: 100vmin; 
+         position: absolute;
+         margin-top: 15vmin;margin-left: -5vmin; 
+         transform-style: preserve-3d;
+         animation: ani linear 10s infinite;}
+         @keyframes ani {
+         0% {transform: rotateY(360deg);}
+         100% {transform: rotateY(0deg);}}
+
+                  /* common ui */
+figure .dot-rotate1 #dot-rotate2 article 
+       { position: absolute;top: 0px;left: 0px; 
+         backface-visibility: hidden;}
+                    /*face1*/
+figure .dot-rotate1 #dot-rotate2 .dot1 .inner2 .dot1-1 
+       { opacity:50%;
+         width: 5px;height: 5px;background-color: #fff;
+         border-radius: 50px;box-shadow: #fff 0px 0px 30px 5px;
+         float: left;margin: 450px 0 0 500px;}
+figure .dot-rotate1 #dot-rotate2 .dot1 .inner2 .dot1-2
+       { width: 5px;height: 5px;background-color:#fff;
+         border-radius: 50px;box-shadow: #fff 0px 0px 30px 5px;
+         float: left;margin: 400px 0 0 -200px;}
+figure .dot-rotate1 #dot-rotate2 .dot1 .inner2 .dot1-3
+       { width: 5px;height: 5px;background-color: #fff;
+         border-radius: 50px;box-shadow: #fff 0px 0px 30px 5px;
+         float: left;margin: 200px 0 0 -500px;}
+figure .dot-rotate1 #dot-rotate2 .dot1 .inner2 .dot1-4
+       { opacity:50%;width: 10px;height: 10px;background-color: #fff;
+         border-radius: 50px;box-shadow: #fff 0px 0px 30px 5px;
+         float: left;margin: 500px 0 0 -400px;}
+figure .dot-rotate1 #dot-rotate2 .dot1 .inner2 .dot1-5
+       { width: 10px;height: 10px;background-color: #fff;
+         border-radius: 50px;box-shadow: #fff 0px 0px 30px 5px;
+         float: left;margin: 550px 0 0 -700px;}
+figure .dot-rotate1 #dot-rotate2 .dot1 .inner2 .dot1-6
+       { width: 5px;height: 5px;background-color: #fff;
+         border-radius: 50px;box-shadow: #fff 0px 0px 30px 5px;
+         float: left;margin: 250px 0 0 -300px;}
+figure .dot-rotate1 #dot-rotate2 .dot1 .inner2 .dot1-7
+       { width: 10px;height: 10px;background-color: #fff;
+         border-radius: 50px;box-shadow: #fff 0px 0px 30px 5px;
+         float: left;margin: 300px 0 0 -480px;}
+figure .dot-rotate1 #dot-rotate2 .dot1 .inner2 .dot1-8
+       { width: 10px;height: 10px;background-color: #fff;
+         border-radius: 50px;box-shadow: #fff 0px 0px 30px 5px;
+         float: left;margin: 450px 0 0 200px;}
+figure .dot-rotate1 #dot-rotate2 .dot1 .inner2 .dot1-9
+       { opacity:50%;width: 5px;height: 5px;background-color: #fff;
+         border-radius: 50px;box-shadow: #fff 0px 0px 30px 5px;
+         float: left;margin: 300px 0 0 250px;}
+
+                /*face2*/
+figure .dot-rotate1 #dot-rotate2 .dot2 .inner2  
+       { margin: 0 0 0 0;}
+figure .dot-rotate1 #dot-rotate2 .dot2 .inner2 .dot2-1 
+       { opacity:50%;
+         width: 5px;height: 5px;background-color: #fff;
+         border-radius: 50px;box-shadow: #fff 0px 0px 30px 5px;
+         float: left;margin: 150px 0 0 450px;}
+figure .dot-rotate1 #dot-rotate2 .dot2 .inner2 .dot2-2
+       { opacity:50%;
+         width: 3px;height: 3px;background-color: #fff;
+         border-radius: 50px;box-shadow: #fff 0px 0px 30px 5px;
+         float: left;margin: 100px 0 0 200px;}
+figure .dot-rotate1 #dot-rotate2 .dot2 .inner2 .dot2-3
+       { width: 3px;height: 3px;background-color: #fff;
+         border-radius: 50px;box-shadow: #fff 0px 0px 30px 5px;
+         float: left;margin: 250px 0 0 150px;}
+figure .dot-rotate1 #dot-rotate2 .dot2 .inner2 .dot2-4
+       { width: 10px;height: 10px;background-color: #fff;
+         border-radius: 50px;box-shadow: #fff 0px 0px 30px 5px;
+         float: left;margin: 350px 0 0 350px;}
+figure .dot-rotate1 #dot-rotate2 .dot2 .inner2 .dot2-5
+       { opacity:50%;
+         width: 10px;height: 10px;background-color: #fff;
+         border-radius: 50px;box-shadow: #fff 0px 0px 30px 5px;
+         float: left;margin: 180px 0 0 100px;}
+figure .dot-rotate1 #dot-rotate2 .dot2 .inner2 .dot2-6
+       { width: 15px;height: 15px;background-color: #fff;
+         border-radius: 50px;box-shadow: #fff 0px 0px 30px 5px;
+         float: left;margin: 200px 0 0 -380px;}
+figure .dot-rotate1 #dot-rotate2 .dot2 .inner2 .dot2-7
+       { opacity:80%;width: 15px;height: 15px;background-color: #fff;
+         border-radius: 50px;box-shadow: #fff 0px 0px 30px 5px;
+         float: left;margin: 300px 0 0 -580px;}
+figure .dot-rotate1 #dot-rotate2 .dot2 .inner2 .dot2-8
+       { opacity:70%;width: 10px;height: 10px;background-color: #fff;
+         border-radius: 50px;box-shadow: #fff 0px 0px 30px 5px;
+         float: left;margin: 230px 0 0 200px;}
+figure .dot-rotate1 #dot-rotate2 .dot2 .inner2 .dot2-9
+       { opacity:80%;width: 10px;height: 10px;background-color: #fff;
+         border-radius: 50px;box-shadow: #fff 0px 0px 30px 5px;
+         float: left;margin: 250px 0 0 200px;}
+figure .dot-rotate1 #dot-rotate2 .dot2 .inner2 .dot2-10
+       { opacity:50%;width: 5px;height: 5px;background-color: #fff;
+         border-radius: 50px;box-shadow: #fff 0px 0px 30px 5px;
+         float: left;margin: 230px 0 0 300px;}
+
+                      /*face3*/
+figure .dot-rotate1 #dot-rotate2 .dot3 .inner2
+       { margin: 0 0 0 0;}
+figure .dot-rotate1 #dot-rotate2 .dot3 .inner2 .dot3-1 
+       { opacity:50%;
+         width: 3px;height: 3px;background-color: #fff;
+         border-radius: 50px;box-shadow: #fff 0px 0px 30px 5px;
+         float: left;margin: 420px 0 0 -300px;}
+figure .dot-rotate1 #dot-rotate2 .dot3 .inner2 .dot3-2
+       { opacity:50%;
+         width: 3px;height: 3px;background-color: #fff;
+         border-radius: 50px;box-shadow: #fff 0px 0px 30px 5px;
+         float: left;margin: 300px 0 0 -100px;}
+figure .dot-rotate1 #dot-rotate2 .dot3 .inner2 .dot3-3
+       { opacity:80%;
+         width: 3px;height: 3px;background-color: #fff;
+         border-radius: 50px;box-shadow: #fff 0px 0px 30px 5px;
+         float: left;margin: 400px 0 0 -150px;}
+figure .dot-rotate1 #dot-rotate2 .dot3 .inner2 .dot3-4
+       { opacity:50%;
+         width: 10px;height: 10px;background-color: #fff;
+         border-radius: 50px;box-shadow: #fff 0px 0px 30px 5px;
+         float: left;margin: 500px 0 0 50px;}
+figure .dot-rotate1 #dot-rotate2 .dot3 .inner2 .dot3-5
+       { opacity:50%;
+         width: 10px;height: 10px;background-color: #fff;
+         border-radius: 50px;box-shadow: #fff 0px 0px 30px 5px;
+         float: left;margin: 300px 0 0 0;}
+figure .dot-rotate1 #dot-rotate2 .dot3 .inner2 .dot3-6
+       { width: 10px;height: 10px;background-color: #fff;
+         border-radius: 50px;box-shadow: #fff 0px 0px 30px 5px;
+         float: left;margin: 400px 0 0 200px;}
+figure .dot-rotate1 #dot-rotate2 .dot3 .inner2 .dot3-7
+       { opacity:70%;width: 15px;height: 15px;background-color: #fff;
+         border-radius: 50px;box-shadow: #fff 0px 0px 30px 5px;
+         float: left;margin: 200px 0 0 0;}
+figure .dot-rotate1 #dot-rotate2 .dot3 .inner2 .dot3-8
+       { opacity:50%;width: 15px;height: 15px;background-color: #fff;
+         border-radius: 50px;box-shadow: #fff 0px 0px 30px 5px;
+         float: left;margin: 450px 0 0 100px;}
+
+               /* 3D 배치 */
+.dot1  { transform: rotateY(0deg) translateZ(-900px);}
+.dot2  { transform: rotateY(20deg) translateZ(-900px);}
+.dot3  { transform: rotateY(40deg) translateZ(-900px);}
+
+/*----------------------주요실적------------------------*/
+content 
+       { width: 92vmin;height: 139vmin;
+         position: absolute;margin: 3.5vmin 0 0 0.5vmin;}
+
+.background      /*------ 배경-------*/
+       { width: 92vmin;height: 139vmin;background-color: rgb(57, 88, 201);
+         opacity: 40%;border-radius: 5vmin 5vmin;
+         position: absolute;margin: 0 0 0 0; }
+
+                /*------사이드바------*/
+.sidebar
+       { width: 92vmin;height: 20vmin;background-color: ;
+         display: block;
+         position: absolute;margin:0;}
+.h1    { width: 92vmin;height: 12.5vmin;     /*---사이드바 배경(스타일)----*/
+         background:radial-gradient(circle,#0c56ce,#2b3b83);
+         border-radius: 5vmin 5vmin 0 0;
+         position:absolute;top:0px;left:0px;
+         transition: 0.5s;}
+.h1 h1 { font: bold 3.5vmin/1 'orbitron';color: #fff;
+         letter-spacing: 1px;          /*---사이드바 제목(스타일)----*/
+         position: absolute;margin: 12.2vmin 0 0 -26.5vmin;
+         transform: translateY(-150%);}
+
+            /*------------목록 전체영역-------------*/
+section   
+       { width: 92vmin;height: 80vmin;
+         box-sizing:border-box;
+         position: absolute;
+         margin: 0;}
+
+                  /*----목록보기 버튼 영역----*/
+section .button                          
+       { width: 17vmin;height: 5.3vmin;
+         background: radial-gradient(circle,#0c56ce,#2b3b83);  
+         box-shadow: 1vmin 1vmin 2.5vmin rgba(49, 49, 49, 0.486);
+         border-radius: 0.7vmin;
+         font: bold 2vmin 'orbitron';color: rgb(211, 214, 230);
+         letter-spacing: 0.1vmin;text-align: center;
+         display: block;position: absolute;
+         padding: 1.2vmin 0 0.8vmin 0;margin: 3.5vmin 0 0 63.5vmin;}
+
+          /*-------------목록보기--------------*/
+section #section
+       { width: 88.5vmin;height: 120.9vmin;background-color: ;
+         position: absolute;margin: -15vmin 0 0 -11.7vmin;}
+section #section #table
+       { width: 88.3vmin;height: 122.7vmin;
+         background-color:  rgba(21, 97, 197, 0.082);/*-rgb(68, 77, 97);rgb(25, 29, 46);-*/ 
+         box-shadow: 0vmin 0.7vmin 4.1vmin 0.5vmin rgba(0, 0, 0, 0.493);           
+         border-radius: 5vmin 5vmin;
+         position: absolute;margin: 29.4vmin 0 0 -1.5vmin;
+         overflow-y: scroll;
+         -ms-overflow-style: none;scrollbar-width: none;
+         /* 인터넷 익스플로러 */}
+        #table::-webkit-scrollbar 
+       { width: 2.1vmin; /*스크롤바의 너비*/}
+         #table::-webkit-scrollbar-thumb 
+       { background: radial-gradient(circle,#0c56ce,#2b3b83); /*스크롤바의 색상*/
+         background-clip: padding-box;
+         border: 0.4vmin solid transparent;
+         border-radius: 0.6vmin;}
+        #table::-webkit-scrollbar-track 
+       { background-color: #b0bbe7; /*스크롤바 트랙 색상*/}
+section #section table
+       { width: 82vmin;height: 90vmin;
+         border-radius: 5vmin 0 0 -5vmin;margin: -3vmin 0 0 -1.5vmin;}
+section #section table tr
+       { color: rgb(27, 74, 243);
+         font: 2.2vmin 'HY헤드라인M';font-weight: bolder;
+         text-align: center;
+         margin: 0;}
+section #section table tr td
+       { font: normal 2.3vmin arial;color: rgb(210, 214, 223);
+         padding: 1vmin 0;text-align: center;}
+
+
+/*---------------------------Footer--------------------------------*/                     
+footer 
+       { width: 100%;height: 100vmin;background: rgb(16, 20, 34);
+         padding: 7vmin 0px;margin: 145.9vmin 0 0 0;}
+footer .inner 
+       { width: 85vmin;padding-bottom: 10vmin;margin: 0px auto;}
+footer .inner .upper        /*--언더라인--*/
+       { width: 100%;
+         border-bottom: 0.2vmin solid #777;
+         padding-bottom: 2.5vmin;}
+footer .inner .logo-footer  /*----로고----*/
+       { width: 55%;display: inline-flex;
+         padding-left: 2vmin;margin: -3vmin 0 0 -2.1vmin;}             
+/*상단 영역 float해제*/    
+footer .inner .upper::after 
+       { content: "";  
+         display: block;
+         clear: both;}
+footer .inner .upper ul 
+       { float: left;
+         width: 65vmin;margin: 3vmin 0 2vmin -1vmin;}
+footer .inner .upper ul li /*--policy terms ...--*/
+       { float: left;}
+footer .inner .upper ul li a/*--policy terms ...--*/ 
+       { font: bold 2.3vmin "arial";color: rgb(205, 207, 214);}
+footer .inner .lower        /*----회사정보내용---*/ 
+       { width: 100%;padding-top: 2.3vmin;}
+footer .inner .lower address 
+       { width: 100%;
+         font: 2.3vmin/2.3 "arial";color: rgb(205, 207, 214);
+         margin-bottom: 2vmin;}                                                  
+footer .inner .lower p 
+       { width: 100%;
+         font: 2.3vmin/2.3 "arial";color: rgb(205, 207, 214);
+         letter-spacing: 0.10vmin;margin-top: -2vmin;}           
